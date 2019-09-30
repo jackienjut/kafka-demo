@@ -1,0 +1,5 @@
+com\jackie\constant\KafkaProperties.class
+com\jackie\kafkademo\KafkaProducerSimple.class
+com\jackie\kafkademo\kafkaConsumer.class
+com\jackie\kafkademo\KafkaConsumer2.class
+com\jackie\kafkademo\KafkaConsumerProducerDemo.class
