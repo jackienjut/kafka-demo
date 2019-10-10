@@ -1,4 +1,4 @@
-package com.jackie.kafkademo;
+package com.jackie.kafkademo.demo1;
 
 import org.apache.kafka.clients.producer.*;
 
@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.Future;
-
 
 //https://www.cnblogs.com/yy3b2007com/p/8688289.html
 public class ProducerTest {
@@ -17,7 +16,7 @@ public class ProducerTest {
 
     private static void producer_test2() {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "192.178.0.111:9092");
+        props.put("bootstrap.servers", "192.168.3.128:9092,192.168.3.129:9092,192.168.3.127:9092");
         props.put("acks", "all");
         props.put("retries", 0);
         props.put("batch.size", 16384);
@@ -41,7 +40,7 @@ public class ProducerTest {
         //kafka topic
 
         Properties props = new Properties();
-        props.put("bootstrap.servers", "192.168.3.128:9092");
+        props.put("bootstrap.servers", "192.168.3.128:9092,192.168.3.129:9092,192.168.3.127:9092");
         props.put("acks", "all");
         props.put("retries", 0);
         props.put("batch.size", 16384);
@@ -58,8 +57,7 @@ public class ProducerTest {
             String ip = "192.178.0." + rnd.nextInt(255);
             String msg = runtime + ",www.example.com," + ip;
 
-            ProducerRecord<String, String> data = new ProducerRecord<String, String>("kafakatopic", ip, msg);
-
+            ProducerRecord<String, String> data = new ProducerRecord<String, String>("test", ip, msg);
 
             Future<RecordMetadata> send = producer.send(data,
                     new Callback() {

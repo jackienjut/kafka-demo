@@ -1,4 +1,4 @@
-package com.jackie.kafkademo;
+package com.jackie.kafkademo.demo1;
 
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
